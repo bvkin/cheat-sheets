@@ -1,4 +1,6 @@
-# Setting Up WiFi
+# Raspberry Pi Cheat Sheet
+
+### Setting Up WiFi
 
 `sudo vi /etc/wpa_supplicant/wpa_supplicant.conf`
 
@@ -11,7 +13,7 @@ network={
 }
 ```
 
-# Setting up a static IP address
+### Setting up a static IP address
 
 `sudo vi /etc/dhcpcd.conf`
 
