@@ -26,3 +26,13 @@ static ip_address=192.168.1.28/24
 static routers=192.168.1.1
 static domain_name_servers=192.168.1.1
 ```
+
+### SSH as root
+
+`sudo vi /etc/ssh/ssh_config`
+
+Add:
+`PermitRootLogin yes`
+`PermitRootLogin without-password`
+
+Copy over key
