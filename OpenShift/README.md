@@ -4,14 +4,18 @@
 ## oc get resources
 `oc get`
 
+`oc get resouce-type resource-name -o yaml` - Return as yaml <br />
+
 `oc get all`
 
 `oc get events`
+Filter for when things were created <br />
+`oc get events --sort-by='.metadata.creationTimestamp'`
 
 `oc get nodes`
 
 `oc get pods` <br />
-`oc get pods -o wide` Includes the IP
+`oc get pods -o wide` - Includes the IP <br />
 
 ## oc describe resources
 `oc describe`
@@ -22,6 +26,8 @@ Describe resources only from a specified namespace <br />
 `oc describe pod pod-name`
 
 `oc describe is image-stream-name`
+
+`oc describe clusterPolicyBindings :default`
 
 ## oc edit resuources
 `oc edit`
@@ -39,6 +45,7 @@ Export multiple resources as a template <br />
 
 ### Creating a new project
 `oc new-project project-name`
+`oc new-project demoproject --description="Project description" --display-name="project-display-name" ` 
 
 ### Change project
 `oc project project-name`
@@ -52,6 +59,9 @@ Export multiple resources as a template <br />
 
 ### Deploying a new application
 `oc new-app --name=app-name image:tag https://registry-url.example.com`
+
+### Run a new version of a deployment config
+`oc rollout latest hello`
 
 ### Scale up pods
 `oc scale --replicas=2 dc dc-name`
