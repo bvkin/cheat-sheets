@@ -10,13 +10,13 @@
 
 `oc get nodes`
 
-`oc get pods`
+`oc get pods` <br />
 `oc get pods -o wide` Includes the IP
 
 ## oc describe resources
 `oc describe`
 
-Describe resources only from a specified namespace
+Describe resources only from a specified namespace <br />
 `oc describe -n name-space` 
 
 `oc describe pod pod-name`
@@ -31,7 +31,7 @@ Describe resources only from a specified namespace
 
 `oc export pod pod-name`
 
-Export multiple resources as a template
+Export multiple resources as a template <br />
 `oc export svc,dc docker-registry --as-template=docker-registry` 
 
 ### Logging in
