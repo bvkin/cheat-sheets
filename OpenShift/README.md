@@ -26,6 +26,8 @@ Filter for when things were created <br />
 `oc get scc` - List all available SCCs <br />
 `oc describe scc scc_name` - Detailed info on a specific SCC
 
+`oc get templates -n openshift`
+
 ## oc describe resources
 `oc describe`
 
@@ -58,7 +60,8 @@ Export multiple resources as a template <br />
 `oc export svc,dc docker-registry --as-template=docker-registry`
 
 ## oc create resources
-`oc create -f yaml_file`
+`oc create -f yaml_file` <br />
+`oc create -f filename -l name=mylabel` applies a label to all resources defined in template
 
 ### Return current user
 `oc whoami` 
@@ -177,3 +180,8 @@ oc set volume dc/mysqldb --add --overwrite --name=volume-name -t pvc \
 ---claim-name=claim-name --claim-size=claim size --claim-mode='ClaimMode'
 ```
 
+### Tagging an image
+`oc tag source destination` permanent tag <br />
+`oc tag --alias=true source destination` permanent tag <br />
+`oc tag --scheduled=true source destination` reimport tag <br />
+`oc tag --reference-policy=local source destination` 
