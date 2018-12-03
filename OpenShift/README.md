@@ -17,16 +17,21 @@ Filter for when things were created <br />
 `oc get node node-name.com -L region` Return node region <br />
 `oc get node node-name.com -L region -L zone` Return node zone <br />
 
+`oc get route -n project-name`
 
-`oc get pv`
+`oc get pv` <br />
+`oc get pvc`
 
 `oc get pods` <br />
 `oc get pods -o wide` - Includes the IP <br />
 
 `oc get scc` - List all available SCCs <br />
-`oc describe scc scc_name` - Detailed info on a specific SCC
 
 `oc get templates -n openshift`
+
+`oc get resourcequota`
+
+`oc get limitranges`
 
 ## oc describe resources
 `oc describe`
@@ -40,6 +45,11 @@ Describe resources only from a specified namespace <br />
 
 `oc describe clusterPolicyBindings :default` - describe who can do what <br />
 
+`oc describe scc scc_name` - Detailed info on a specific SCC
+
+`oc describe resourcequota quota-name` 
+
+
 ## oc edit resuources
 `oc edit`
 
@@ -48,6 +58,7 @@ Describe resources only from a specified namespace <br />
 ## delete resources
 `oc delete project project-name`
 `oc delete pv persistant-volume-name`
+`oc delete all -l app=label-name`
 
 ## export resources
 ```
@@ -167,6 +178,12 @@ ssh openshift-user@master-node
 htpasswd -b /etc/origin/master/htpasswd username password
 ``` 
 
+### Save a resource configuration
+`oc export type/resource_name -o yaml > version-dc.yml`
+
+### Update a resource configuration
+`oc replace -f version-dc.yml`
+
 ### Mount info on NFS server
 `showmount`
 `showmount -e` show exported mount points
@@ -180,8 +197,18 @@ oc set volume dc/mysqldb --add --overwrite --name=volume-name -t pvc \
 ---claim-name=claim-name --claim-size=claim size --claim-mode='ClaimMode'
 ```
 
+### Schedule on a node with GiB of memory
+`oc set resources dc hello --requests=memory=8Gi`
+
 ### Tagging an image
 `oc tag source destination` permanent tag <br />
 `oc tag --alias=true source destination` permanent tag <br />
 `oc tag --scheduled=true source destination` reimport tag <br />
 `oc tag --reference-policy=local source destination` 
+
+### Check node utilization
+`oc adm top node`
+
+
+### Use diagnostics tool
+`oc adm diagnostics`
