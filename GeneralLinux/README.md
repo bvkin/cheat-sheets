@@ -40,3 +40,16 @@ nameserver 192.168.122.1
 
 ### Editing systemd services
 `vi /usr/lib/systemd/system/firewalld.service`
+
+### Using Subscription Managaer
+```
+sudo subscription-manager list --available
+
+sudo subscription-manager remove --all
+sudo subscription-manager unregister
+sudo subscription-manager clean
+
+sudo subscription-manager register
+sudo subscription-manager refresh
+sudo subscription-manager attach --auto
+```
