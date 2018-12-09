@@ -53,3 +53,11 @@ sudo subscription-manager register
 sudo subscription-manager refresh
 sudo subscription-manager attach --auto
 ```
+
+### Libvirt Snapshots
+```
+virsh snapshot-create-as --domain {VM-NAME} --name "{SNAPSHOT-NAME}"
+virsh snapshot-delete --domain freebsd --snapshotname 5Sep2016_S2
+virsh snapshot-revert --domain freebsd --snapshotname 5Sep2016_S1 --running
+virsh shutdown --domain freebsd
+```
