@@ -6,6 +6,8 @@
 
 `tar -cvzf tarballname.tar.gz path/` Compress directory
 
+`tar -ztvf my-data.tar.gz` Query files in a directory
+
 ### Configuring Static IPs
 `vi /etc/sysconfig/network-scripts/ifcfg-eth0`
 
