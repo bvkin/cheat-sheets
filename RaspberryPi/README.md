@@ -29,11 +29,13 @@ static domain_name_servers=192.168.1.1
 
 ### SSH as root
 
-`sudo vi /etc/ssh/ssh_config`
+`sudo vi /etc/ssh/sshd_config`
 
-Add:
-`PermitRootLogin yes`
-`PermitRootLogin without-password`
+Add the following:
+`PermitRootLogin yes` <br />
+`PermitRootLogin without-password` <br />
+
+**Note:** Must edit /etc/ssh/sshd_config and not /etc/ssh/ssh_config
 
 ### Backup image
 `sudo dd bs=4M if=/dev/sdb of=raspbian.img` Create backuo <br />
