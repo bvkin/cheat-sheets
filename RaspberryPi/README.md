@@ -35,4 +35,8 @@ Add:
 `PermitRootLogin yes`
 `PermitRootLogin without-password`
 
-Copy over key
+### Backup image
+`sudo dd bs=4M if=/dev/sdb of=raspbian.img` Create backuo
+`sudo dd bs=4M if=raspbian.img of=/dev/sdb` Restore backup
+`sudo dd bs=4M if=/dev/sdb | gzip > raspbian.img.gz` Create compressed backup
+`gunzip --stdout raspbian.img.gz | sudo dd bs=4M of=/dev/sdb` Restore compressed backup
