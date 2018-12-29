@@ -65,4 +65,4 @@ virsh shutdown --domain freebsd
 ```
 
 ### fidsk
-`fdisk -l` list file types
+`fdisk -l` List device types <br />
