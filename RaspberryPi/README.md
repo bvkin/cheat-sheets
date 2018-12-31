@@ -45,7 +45,7 @@ Add the following:
 
 #### Kubernees backup restore steps:
 * Change hostname `hostnamectl set-hostname computeX` as well as loopback in `/etc/hosts`
-* Connect to network `vi /etc/wpa_supplicant/wpa_supplicant.conf` (uncomment lines)  and add static ip `vi /etc/dhcpcd.conf`
+* Connect to network `vi /etc/wpa_supplicant/wpa_supplicant.conf` (uncomment lines)  and uncomment entry in `/etc/dhcpcd.conf` - remember to change ip address
 * Reboot
 
 
