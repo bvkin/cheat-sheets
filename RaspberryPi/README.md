@@ -42,3 +42,10 @@ Add the following:
 `sudo dd bs=4M if=raspbian.img of=/dev/sdb` Restore backup <br />
 `sudo dd bs=4M if=/dev/sdb | gzip > raspbian.img.gz` Create compressed backup <br />
 `gunzip --stdout raspbian.img.gz | sudo dd bs=4M of=/dev/sdb` Restore compressed backup <br />
+
+#### Kubernees backup restore steps:
+* Change hostname `hostnamectl set-hostname computeX` as well as loopback in `/etc/hosts`
+* Connect to network `vi /etc/wpa_supplicant/wpa_supplicant.conf` (uncomment lines)  and add static ip `vi /etc/dhcpcd.conf`
+* Reboot
+
+

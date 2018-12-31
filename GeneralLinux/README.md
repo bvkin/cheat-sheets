@@ -64,5 +64,8 @@ virsh snapshot-revert --domain freebsd --snapshotname 5Sep2016_S1 --running
 virsh shutdown --domain freebsd
 ```
 
+### List what is listening on each port
+`netstat -tulpn`
+
 ### fidsk
 `fdisk -l` List device types <br />
