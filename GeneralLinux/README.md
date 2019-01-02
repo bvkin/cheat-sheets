@@ -1,5 +1,7 @@
-### RPMs 
+### Package Management 
 `rpm -qa` - list installed packages
+
+`dnf --refresh upgrade` - Update system
 
 ### Tarballs
 `tar xvzf file.tar.gz` Extract tar.gz file
@@ -69,3 +71,6 @@ virsh shutdown --domain freebsd
 
 ### fidsk
 `fdisk -l` List device types <br />
+
+### Logs
+`journalctl -u [service]` - View logs for a specified service
