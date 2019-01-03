@@ -209,6 +209,8 @@ oc set volume dc/mysqldb --add --overwrite --name=volume-name -t pvc \
 ### Check node utilization
 `oc adm top node`
 
-
 ### Use diagnostics tool
 `oc adm diagnostics`
+
+### Logging into s11
+`oc login https://console.s11.core.rht-labs.com`

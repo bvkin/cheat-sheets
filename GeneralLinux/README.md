@@ -2,6 +2,7 @@
 `rpm -qa` - list installed packages
 
 `dnf --refresh upgrade` - Update system
+`sudo dnf config-manager --add-repo https://example.com/example.repo` - add a repository to system
 
 ### Tarballs
 `tar xvzf file.tar.gz` Extract tar.gz file
