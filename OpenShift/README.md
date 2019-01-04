@@ -1,94 +1,61 @@
 # OpenShift Cheat Sheet
 
+## Useful `oc get`
+`oc get all` Return everything <br />
+`oc get resouce-type resource-name -o yaml` Return as yaml  <br />
 
-## oc get resources
-`oc get`
-
-`oc get resouce-type resource-name -o yaml` - Return as yaml <br />
-
-`oc get all`
-
-`oc get events`
-Filter for when things were created <br />
-`oc get events --sort-by='.metadata.creationTimestamp'`
-
-`oc get nodes`
 `oc get node node-name.com --show-labels` Return all node labels <br />
 `oc get node node-name.com -L region` Return node region <br />
 `oc get node node-name.com -L region -L zone` Return node zone <br />
 
-`oc get route -n project-name`
+`oc get pods -o wide` Return ip addresses of pods <br />
+***
 
-`oc get pv` <br />
-`oc get pvc`
+## Useful `oc describe`
+`oc describe -n name-space` Resources from specified namespaces <br />
+`oc describe is image-stream-name` Describe image stream <br />
+`oc describe clusterPolicyBindings :default` Describe who can do what <br />
+***
 
-`oc get pods` <br />
-`oc get pods -o wide` - Includes the IP <br />
+## Useful `oc delete`
+`oc delete all -l app=label-name` <br />
+***
 
-`oc get scc` - List all available SCCs <br />
+## Templates
+#### Save resource configuration
+`oc export resource-type resource-name > output.yaml` Save as template <br />
+`oc export svc,dc docker-registry --as-template=docker-registry` Save multiple as template <br />
 
-`oc get templates -n openshift`
-
-`oc get resourcequota`
-
-`oc get limitranges`
-
-## oc describe resources
-`oc describe`
-
-Describe resources only from a specified namespace <br />
-`oc describe -n name-space` 
-
-`oc describe pod pod-name`
-
-`oc describe is image-stream-name`
-
-`oc describe clusterPolicyBindings :default` - describe who can do what <br />
-
-`oc describe scc scc_name` - Detailed info on a specific SCC
-
-`oc describe resourcequota quota-name` 
-
-
-## oc edit resuources
-`oc edit`
-
-`oc patch dc/demo-app --patch '{"spec":{"template":{"spec":{"serviceAccountName": "useroot"}}}}'`
-
-## delete resources
-`oc delete project project-name`
-`oc delete pv persistant-volume-name`
-`oc delete all -l app=label-name`
-
-## export resources
-```
-oc export
-oc export pod pod-name
-oc export pod pod-name > output.yaml
-```
-
-Export multiple resources as a template <br />
-`oc export svc,dc docker-registry --as-template=docker-registry`
-
-## oc create resources
+#### Create resources
 `oc create -f yaml_file` <br />
 `oc create -f filename -l name=mylabel` applies a label to all resources defined in template
 
-### Return current user
-`oc whoami` 
-
-### Apply changes to a resource definition
+#### Apply changes to a resource definition
 `oc apply -f dc.yml`
+***
 
-### Logging in
-`oc login -u username -p password https://master.example.com`
+## Logs
+#### Events
+`oc get events` Return important events <br />
+`oc get events --sort-by='.metadata.creationTimestamp'` Events with filters <br /> 
 
-### Creating a new project
+#### Resuource Logs
+`oc logs resource-name` 
+***
+
+## Logging in
+`oc login -u username -p password https://master.example.com` <br />
+`oc login https://console.s11.core.rht-labs.com` Logging into s11 <br />
+***
+
+## Projects
+#### Creating a new project
 `oc new-project project-name`
-`oc new-project demoproject --description="Project description" --display-name="project-display-name" ` 
+`oc new-project demoproject --description="Project description" --display-name="project-display-name" `
 
-### Change project
+#### Change project
 `oc project project-name`
+***
 
 ### Return high level status of current project
 `oc status`
@@ -102,7 +69,7 @@ Export multiple resources as a template <br />
 `oc new-app --file=mysql-ephemeral.yml` From a file <br />
 
 ### Run a new version of a deployment config
-`oc rollout latest hello`
+`oc rollout latest dc-name`
 
 ### Scale up pods
 `oc scale --replicas=2 dc dc-name`
@@ -115,9 +82,6 @@ Export multiple resources as a template <br />
 
 ### Execute commands against a pod
 `oc exec pod-name command`
-
-### Logging resources
-`oc logs resource-name`
 
 ### Port forwarding
 `oc port-forward pod-name local-port:remote-port`
@@ -211,6 +175,3 @@ oc set volume dc/mysqldb --add --overwrite --name=volume-name -t pvc \
 
 ### Use diagnostics tool
 `oc adm diagnostics`
-
-### Logging into s11
-`oc login https://console.s11.core.rht-labs.com`
