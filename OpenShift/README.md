@@ -1,4 +1,4 @@
-# OpenShift Cheat Sheet
+# Administration
 
 ## Useful `oc get`
 `oc get all` Return everything <br />
@@ -175,3 +175,25 @@ oc set volume dc/mysqldb --add --overwrite --name=volume-name -t pvc \
 
 ### Use diagnostics tool
 `oc adm diagnostics`
+
+
+# Application development
+
+## Useful `oc new-app`
+`oc new-app http://gitserver.example.com/mygitrepo` Create project <br />
+`oc new-app php~http://gitserver.example.com/mygitrepo` - or <br />
+`oc new-app -i php http://gitserver.example.com/mygitrepo` Crate project and name it's image stream <br />
+`oc new-app --code http://gitserver.example.com/mygitrepo` Specify build is from a git repository <br />
+`oc new-app --docker-image registry.example.com/mycontainerimage` Specify build is from a container image <br /> 
+`oc new-app --strategy docker http://gitserver.example.com/mydockerfileproject` Specify build from Dockerfile <br />
+`oc new-app --strategy source http://gitserver.example.com/user/mygitrepo` Specify build using S2i <br />
+`oc new-app --name <label-name> http://gitserver.example.com/mygitrepo` Label all resources created by oc new-app <br />
+`oc new-app -o json registry.example.com/mycontainerimage` View all resourse definitions before they are created
+
+***
+
+#### Create an image-stream 
+```
+oc import-image <image-stream-name> --confirm \
+    --from registry.acme.example.com:5000/acme/awesome --insecure`
+```

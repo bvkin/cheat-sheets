@@ -38,10 +38,10 @@ Add the following:
 **Note:** Must edit /etc/ssh/sshd_config and not /etc/ssh/ssh_config
 
 ### Backup image
-`sudo dd bs=4M if=/dev/sdb of=raspbian.img` Create backuo <br />
-`sudo dd bs=4M if=raspbian.img of=/dev/sdb` Restore backup <br />
+`sudo dd bs=4M if=/dev/sdb of=raspbian.img status=progress` Create backuo <br />
+`sudo dd bs=4M if=raspbian.img of=/dev/sdb status=progress` Restore backup <br />
 `sudo dd bs=4M if=/dev/sdb | gzip > raspbian.img.gz` Create compressed backup <br />
-`gunzip --stdout raspbian.img.gz | sudo dd bs=4M of=/dev/sdb` Restore compressed backup <br />
+`gunzip --stdout raspbian.img.gz | sudo dd bs=4M of=/dev/sdb status=progress` Restore compressed backup <br />
 
 #### Kubernees backup restore steps:
 * Change hostname `hostnamectl set-hostname computeX` as well as loopback in `/etc/hosts`

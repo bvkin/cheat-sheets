@@ -12,10 +12,22 @@
 ### Editing systemd services
 `vi /usr/lib/systemd/system/firewalld.service`
 
-### Using Subscription Managaer
-```
-sudo subscription-manager list --available
+## Using Subscription Managaer
 
+#### Enable certain repos example
+```
+subscription-manager repos \
+    --enable="rhel-7-server-rpms" \
+    --enable="rhel-7-server-extras-rpms" \
+    --enable="rhel-7-server-ose-3.11-rpms" \
+    --enable="rhel-7-server-ansible-2.6-rpms"
+```
+
+#### List repos
+`sudo subscription-manager list --available`
+
+#### Refresh Subscription manager
+```
 sudo subscription-manager remove --all
 sudo subscription-manager unregister
 sudo subscription-manager clean
