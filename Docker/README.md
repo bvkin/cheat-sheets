@@ -23,3 +23,13 @@
 
 ### Tagging images
 `docker tag hash tag-name`
+
+## Container commands
+
+#### List containers
+`docker ps`
+`docker ps -a` Include those not running
+
+#### Delete containers
+`docker rm <container-id>`
+`docker rm $(docker ps -a -q)` Remove all containers in one go
