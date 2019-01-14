@@ -9,6 +9,7 @@
 `oc get node node-name.com -L region -L zone` Return node zone <br />
 
 `oc get pods -o wide` Return ip addresses of pods <br />
+`oc get pod <pod-name> -o (json|yaml)` Return detailed information about pod <br />
 ***
 
 ## Useful `oc describe`
@@ -56,10 +57,6 @@
 #### Change project
 `oc project project-name`
 ***
-
-### Return high level status of current project
-`oc status`
-`oc status -v`
 
 ### Install the oc command
 `sudo yum install atomic-openshift-clients`
@@ -188,7 +185,8 @@ oc set volume dc/mysqldb --add --overwrite --name=volume-name -t pvc \
 `oc new-app --strategy docker http://gitserver.example.com/mydockerfileproject` Specify build from Dockerfile <br />
 `oc new-app --strategy source http://gitserver.example.com/user/mygitrepo` Specify build using S2i <br />
 `oc new-app --name <label-name> http://gitserver.example.com/mygitrepo` Label all resources created by oc new-app <br />
-`oc new-app -o json registry.example.com/mycontainerimage` View all resourse definitions before they are created
+`oc new-app -o json registry.example.com/mycontainerimage` View all resourse definitions before they are created <br />
+`oc new-app --build-env=<variable> registry.example.com/mycontainerimage` Set enter an environment vairable for all build images <br />
 
 ***
 
@@ -197,3 +195,14 @@ oc set volume dc/mysqldb --add --overwrite --name=volume-name -t pvc \
 oc import-image <image-stream-name> --confirm \
     --from registry.acme.example.com:5000/acme/awesome --insecure`
 ```
+
+#### Copy files from pod
+`oc cp <pod-name>:<source-path> <destination-path>` From pod locally <br />
+`oc cp <source-path> <pod-name>:<destination-path>` Locally to pod <br />
+
+#### Return high level status of current project
+`oc status` <br />
+`oc status -v`
+
+#### Start a new build of 
+

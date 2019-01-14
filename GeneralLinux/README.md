@@ -1,5 +1,6 @@
 ### Package Management 
 `rpm -qa` - list installed packages
+`rpm -ql <package-name>` List files installed by particular package
 
 `dnf --refresh upgrade` - Update system <br />
 `sudo dnf config-manager --add-repo https://example.com/example.repo` - add a repository to system
