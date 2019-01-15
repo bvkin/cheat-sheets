@@ -54,3 +54,11 @@ virsh shutdown --domain freebsd
 
 ### Logs
 `journalctl -u [service]` - View logs for a specified service
+
+### Background Processes
+`show` Print background processes liked to terminal <br />
+`kill %<process-number>` Kill a lined process <br />
+
+### Kernel Modules
+`lsmod` List Modules <br />
+`lsmod | grep bridge` List network bridges <br>

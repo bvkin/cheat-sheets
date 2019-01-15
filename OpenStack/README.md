@@ -28,6 +28,7 @@
 `openstack flavor show flavor-name` <br/>
 `openstack project show project-name` <br/>
 `openstack user show user-name` <br/>
+`openstack console url show <instance-id>` Get the url to login to openstack console <br />
 
 ### Output as json
 `openstack server list -f json` <br/>
