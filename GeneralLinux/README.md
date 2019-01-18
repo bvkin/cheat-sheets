@@ -98,3 +98,6 @@ virsh shutdown --domain freebsd
 ### Kernel Modules
 `lsmod` List Modules <br />
 `lsmod | grep bridge` List network bridges <br>
+
+### Creating an image file
+dd if=/dev/zero of=storage.img count=15G status=progress
