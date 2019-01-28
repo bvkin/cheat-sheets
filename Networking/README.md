@@ -91,3 +91,6 @@ nameserver 192.168.122.1
 
 #### Capture tcp packets
 `tcpdump` All packets <br />
+
+## Firewall
+`firewall-cmd --list-all` List all enabled services <br />
