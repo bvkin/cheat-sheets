@@ -16,6 +16,7 @@
 `oc describe -n name-space` Resources from specified namespaces <br />
 `oc describe is image-stream-name` Describe image stream <br />
 `oc describe clusterPolicyBindings :default` Describe who can do what <br />
+`oc describe rolebinding.rbac -n <namespace>` Describe role bindings for a project <br />
 ***
 
 ## Useful `oc delete`
@@ -28,8 +29,11 @@
 `oc export svc,dc docker-registry --as-template=docker-registry` Save multiple as template <br />
 
 #### Create resources
-`oc create -f yaml_file` <br />
-`oc create -f filename -l name=mylabel` applies a label to all resources defined in template
+`oc create -f <yaml_file>` <br />
+`oc create -f <yaml-file> -l name=mylabel` applies a label to all resources defined in template
+
+#### Replace Resources
+`oc replace -f <yaml_file>` <br />
 
 #### Apply changes to a resource definition
 `oc apply -f dc.yml`
@@ -43,6 +47,11 @@
 #### Resuource Logs
 `oc logs resource-name` 
 ***
+
+## OpenShift Api
+`oc proxy --port=8001` Proxy the api to another port <br />
+`curl -X GET http://localhost:8001` Return all of the api endpoints <br />
+`curl localhost:8001/openapi/v2` Return information about the endpoints <br />
 
 ## Logging in
 `oc login -u username -p password https://master.example.com` <br />
@@ -204,5 +213,4 @@ oc import-image <image-stream-name> --confirm \
 `oc status` <br />
 `oc status -v`
 
-#### Start a new build of 
 

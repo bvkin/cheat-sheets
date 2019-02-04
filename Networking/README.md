@@ -94,3 +94,5 @@ nameserver 192.168.122.1
 
 ## Firewall
 `firewall-cmd --list-all` List all enabled services <br />
+`firewall-cmd --add-service=<service-name>` Allow packets through of a specified service <br />
+`firewall-cmd --add-service=<service-name> --permanent` Make allow rule permanent <br />
