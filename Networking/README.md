@@ -103,6 +103,7 @@ nameserver 192.168.122.1
 `ausearch -m avc --start recent` For more human friendly logs <br />
 
 Log Parts
+
 | Log Part                                     | Name             |
 |----------------------------------------------|------------------|
 | type=AVC                                     | Log type         |
@@ -126,3 +127,4 @@ Log Parts
 
 `setenforce 0` Set to permissive mode <br />
 `setenforce 1` Set to enforcing mode <br />
+
