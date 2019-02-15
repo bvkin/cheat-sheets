@@ -96,3 +96,33 @@ nameserver 192.168.122.1
 `firewall-cmd --list-all` List all enabled services <br />
 `firewall-cmd --add-service=<service-name>` Allow packets through of a specified service <br />
 `firewall-cmd --add-service=<service-name> --permanent` Make allow rule permanent <br />
+
+
+## Selinux
+`tail -f /var/log/audit.log` Selinux logs <br />
+`ausearch -m avc --start recent` For more human friendly logs <br />
+
+Log Parts
+| Log Part                                     | Name             |
+|----------------------------------------------|------------------|
+| type=AVC                                     | Log type         |
+| msg=audit(1363289005.532:184)                | Timestamp        |
+| avc:                                         | Log type (again) |
+| denied                                       | State            |
+| { read }                                     | Permission       |
+| for pid=29199                                | Process PID      |
+| comm="Trace"                                 | Process CMD      |
+| name="online"                                | Target name      |
+| dev="sysfs"                                  | Device           |
+| ino=30                                       | inode number     |
+| scontext=staff_u:staff_r:googletalk_plugin_t | Source context   |
+| tcontext=system_u:object_r:sysfs_t           | Target context   |
+| tclass=file                                  | Target class     |
+
+`semodule -DB` Remove obscuring of logs <br />
+`semodule -B` Re-obscure logs <br />
+
+`seinfo` Query whole selinux policy <br />
+
+`setenforce 0` Set to permissive mode <br />
+`setenforce 1` Set to enforcing mode <br />
