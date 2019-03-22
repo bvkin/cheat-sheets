@@ -52,6 +52,7 @@
 `oc proxy --port=8001` Proxy the api to another port <br />
 `curl -X GET http://localhost:8001` Return all of the api endpoints <br />
 `curl localhost:8001/openapi/v2` Return information about the endpoints <br />
+`oc api-versions` Api endpoint discovery
 
 ## Logging in
 `oc login -u username -p password https://master.example.com` <br />

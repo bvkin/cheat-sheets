@@ -128,3 +128,8 @@ Log Parts
 `setenforce 0` Set to permissive mode <br />
 `setenforce 1` Set to enforcing mode <br />
 
+### View Ports in use
+`netstat -tulpn`
+
+### View Process Running on a port
+`lsof -i TCP:<port-number>
