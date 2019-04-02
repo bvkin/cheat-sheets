@@ -214,4 +214,3 @@ oc import-image <image-stream-name> --confirm \
 `oc status` <br />
 `oc status -v`
 
-

@@ -101,3 +101,10 @@ virsh shutdown --domain freebsd
 
 ### Creating an image file
 dd if=/dev/zero of=storage.img count=15G status=progress
+
+# Satelite
+`hammer --username <username> --password <password> organization list` <br/>
+`hammer --username <username> --password <password> product list` <br/>
+`hammer --username <username> --password <password> product list --organization '<organization-name>'` <br />
+`hammer --username <username> --password <password> repository-set list --organization '<organization-name>' --product '<product-name>'` <br />
+`hammer --username <username> --password <password> repository-set available-repositories --organization '<organization-name>' --product '<product-name>' --id <id-number>` <br />
