@@ -133,3 +133,13 @@ Log Parts
 
 ### View Process Running on a port
 `lsof -i TCP:<port-number>
+
+
+## nmcli
+`nmcli dev status` Get device status  <br />
+`nmcli dev wifi list` List reachable wifi networks <br />
+`nmcli connection up <connecton-name>` Bring a connection up  <br />
+`nmcli connection add con-name <connection-name> type <connection-type> device <device-name>` Add a new connection <br />
+`nmcli connection add con-name <connection-name> type <connection-type> device <device-name> ip4 <address> gw4 <gateway> ip4.dns <dns>` Configure static ip <br />
+`nmcli con modify <connection-name> wifi-sec.key-mgmt wpa-psk` Configure for wifi passwords <br />
+`nmcli con modify <connection-name> wifi-sec.psk <password>` Give connection a password <br />
