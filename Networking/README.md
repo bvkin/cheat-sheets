@@ -135,7 +135,7 @@ Log Parts
 `lsof -i TCP:<port-number>
 
 
-## nmcli
+## NetworkManager
 `nmcli dev status` Get device status  <br />
 `nmcli dev wifi list` List reachable wifi networks <br />
 `nmcli connection up <connecton-name>` Bring a connection up  <br />
