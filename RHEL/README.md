@@ -100,7 +100,7 @@ virsh shutdown --domain freebsd
 `lsmod | grep bridge` List network bridges <br>
 
 ### Creating an image file
-dd if=/dev/zero of=storage.img count=15G status=progress
+dd if=storage.img of=/dev/sdX count=15G status=progress
 
 # Satelite
 `hammer --username <username> --password <password> organization list` <br/>
