@@ -100,7 +100,12 @@ virsh shutdown --domain freebsd
 `lsmod | grep bridge` List network bridges <br>
 
 ### Creating an image file
-dd if=storage.img of=/dev/sdX count=15G status=progress
+`dd if=storage.img of=/dev/sdX count=15G status=progress`
+
+### Process listing
+`ps aux` lists all processes <br />
+`ps aux --sort=-pcpu | head n 4` grab 4 highest cpu processes <br />
+`ps aux --sort=-rss | head n 4` grab 4 highest memory processes <br />
 
 # Satelite
 `hammer --username <username> --password <password> organization list` <br/>
