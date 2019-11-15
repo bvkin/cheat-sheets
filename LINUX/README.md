@@ -10,6 +10,13 @@
 `tar -cvzf tarballname.tar.gz path/` Compress directory <br />
 `tar -ztvf my-data.tar.gz` Query files in a directory <br />
 
+## Systemd
+`systemd-cgls` List processes running under cgroup hirearchy <br />
+`systemd-cgtop` List top information in cgroup hirearchy <br />
+`systemd-run --unit <unit-name> --slice=<slice-name> <command>` Start transient processes <br />
+`systemctl set-property ...` Set resource limits on processes <br />
+`systemctl daemon-reload` Reload unit files <br />
+
 ### Editing systemd services
 `vi /usr/lib/systemd/system/firewalld.service`
 
