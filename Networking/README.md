@@ -143,3 +143,10 @@ Log Parts
 `nmcli connection add con-name <connection-name> type <connection-type> ip4 <address> gw4 <gateway> ipv4.dns <dns>` Configure static ip <br />
 `nmcli con modify <connection-name> wifi-sec.key-mgmt wpa-psk` Configure for wifi passwords <br />
 `nmcli con modify <connection-name> wifi-sec.psk <password>` Give connection a password <br />
+
+### Adding network bridges
+`nmcli con add type bridge autoconnect yes con-name br0 ifname br0` <br/>
+`nmcli con add type bridge-slave autoconnect yes con-name en01s0 ifname eno1 master br0` <br/`>
+`nmcli con modify br0 ipv4.addresses <subnet-ip> ipv4.method manula` <br />
+`nmcli con modify br0 ipv4.gateway <gw>` <br />
+`nmcli con modify br0 ipv4.dns <dns>` <br />
