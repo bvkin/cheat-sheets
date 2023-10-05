@@ -118,9 +118,16 @@ virsh shutdown --domain freebsd
 `ps aux --sort=-pcpu | head n 4` grab 4 highest cpu processes <br />
 `ps aux --sort=-rss | head n 4` grab 4 highest memory processes <br />
 
-# Satelite
+### Satelite
 `hammer --username <username> --password <password> organization list` <br/>
 `hammer --username <username> --password <password> product list` <br/>
 `hammer --username <username> --password <password> product list --organization '<organization-name>'` <br />
 `hammer --username <username> --password <password> repository-set list --organization '<organization-name>' --product '<product-name>'` <br />
 `hammer --username <username> --password <password> repository-set available-repositories --organization '<organization-name>' --product '<product-name>' --id <id-number>` <br />
+
+### Certificates
+1. Generate Key.
+`openssl genrsa -out admin.com.key 2048`
+2. Use the private key to create a certificate signing request
+`openssl req -new -sha256 -key admin.com.key -out admin.com.csr`
+3. Submit certificate signing request to certificate authority.
