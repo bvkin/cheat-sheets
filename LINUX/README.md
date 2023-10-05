@@ -91,6 +91,10 @@ virsh shutdown --domain freebsd
 ### List what is listening on each port
 `netstat -tulpn`
 
+
+### List what's running on each port of a remote server
+`nmap -sT <hostname>`
+
 ### fidsk
 `fdisk -l` List device types <br />
 `fdisk -l <device-name>` List partitions of a device <br />
