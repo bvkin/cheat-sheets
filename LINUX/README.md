@@ -9,6 +9,7 @@
 `tar xvzf file.tar.gz` Extract tar.gz file <br />
 `tar -cvzf tarballname.tar.gz path/` Compress directory <br />
 `tar -ztvf my-data.tar.gz` Query files in a directory <br />
+`tar -C /path/to/dir` Change directory before running tar command <br />
 
 ## Systemd
 `systemd-cgls` List processes running under cgroup hirearchy <br />
@@ -114,7 +115,7 @@ virsh shutdown --domain freebsd
 `dd if=storage.img of=/dev/sdX count=15G status=progress`
 
 ### Process listing
-`ps aux` lists all processes <br />
+`ps -aux` lists all processes <br />
 `ps aux --sort=-pcpu | head n 4` grab 4 highest cpu processes <br />
 `ps aux --sort=-rss | head n 4` grab 4 highest memory processes <br />
 
@@ -131,3 +132,7 @@ virsh shutdown --domain freebsd
 2. Use the private key to create a certificate signing request
 `openssl req -new -sha256 -key admin.com.key -out admin.com.csr`
 3. Submit certificate signing request to certificate authority.
+
+
+## Ubuntu
+`apt install <package-name>` Install package <br />
