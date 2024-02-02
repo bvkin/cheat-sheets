@@ -136,3 +136,9 @@ virsh shutdown --domain freebsd
 
 ## Ubuntu
 `apt install <package-name>` Install package <br />
+`apt remove <package-name>` Uninstall package <br />
+`apt clean` Clean cache <br />
+`apt-cache search <package-name>` Search for package <br />
+`apt-get update` Refresh list of available packages <br >
+`apt full-upgrade` Upgrade installed pacakges <br />
+`apt-key list` List gpg keys <br />
