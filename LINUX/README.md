@@ -133,6 +133,11 @@ virsh shutdown --domain freebsd
 `openssl req -new -sha256 -key admin.com.key -out admin.com.csr`
 3. Submit certificate signing request to certificate authority.
 
+### Netcat
+`nc <host> <port>` Connect to a port <br />
+`nc -z -v <host> <port>-<port>` Scan for open ports between a range <br />
+`nc -l <port> | <remote-file-name>.txt` Listen for a connectino on a specific port <br />
+`cat <local-file-name>.txt | nc <host> <port>` Send file over a tcp connection <br />
 
 ## Ubuntu
 `apt install <package-name>` Install package <br />
