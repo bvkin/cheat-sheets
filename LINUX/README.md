@@ -133,26 +133,6 @@ virsh shutdown --domain freebsd
 `openssl req -new -sha256 -key admin.com.key -out admin.com.csr`
 3. Submit certificate signing request to certificate authority.
 
-### Netcat
-`nc <host> <port>` Connect to a port <br />
-`nc -z -v <host> <port>-<port>` Scan for open ports between a range <br />
-`nc -l <port> | <remote-file-name>.txt` Listen for a connectino on a specific port <br />
-`cat <local-file-name>.txt | nc <host> <port>` Send file over a tcp connection <br />
-
-### Ip
-`ip a` Get interface ip addresses <br />
-`ip link` Show link layer mac addresses <br />
-`ip link set dev <interface> up/down` Set network interface up or down <br />
-`ip a add/del <ip-address>/<mask> dev <interface>` Add or delete ip address to a network interface <br />
-`ip route show` Display the kernel's routing table <br />
-`ip route add <destination> via <gateway> dev <interface>` Add route to routing table <br />
-`ip route del <destination>` Remove route from routing table <br />
-`ip neigh show` Display ARP table <br />
-`ip neigh add|del <ip-address> lladdr <mac> nud permanent dev <interface>` Manually add pr delete entries from ARP table <br />
-`ip netns list` List all network namespaces <br />
-`ip netns add <namespace>` Add network namespace <br />
-`ip netns delete <namesapce>` Delete network namespace <br />
-
 ## Ubuntu
 `apt install <package-name>` Install package <br />
 `apt remove <package-name>` Uninstall package <br />
