@@ -141,3 +141,8 @@ virsh shutdown --domain freebsd
 `apt-get update` Refresh list of available packages <br >
 `apt full-upgrade` Upgrade installed pacakges <br />
 `apt-key list` List gpg keys <br />
+
+## Tmux
+`tmux ls` List sessions <br />
+`tmux kill-session -t <session-name>` Kill session <br />
+`Ctrl+b d` Detach from session <br />
