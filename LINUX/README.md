@@ -133,6 +133,20 @@ virsh shutdown --domain freebsd
 `openssl req -new -sha256 -key admin.com.key -out admin.com.csr`
 3. Submit certificate signing request to certificate authority.
 
+## GPG
+`gpg --generate-key` Generate a gpg key <br />
+`gpg --full-generate-key` Generate gpg key (all settings) <br />
+`gpg --list-keys` List gpg keys <br />
+`gpg --list-secret-keys` List secret keys <br />
+`gpg -c <file>` <br /> Symetric encrypt file using gpg key<br />
+`gpg -e -r <recipient> <file>` Asymetric Encrypt file using gpg key, specify recipient <br />
+`gpg -d -r <recipient> <file>.gpg` Decrypt file with gpg key, specify recipient <br />
+
+## Tmux
+`tmux ls` List sessions <br />
+`tmux kill-session -t <session-name>` Kill session <br />
+`Ctrl+b d` Detach from session <br />
+
 ## Ubuntu
 `apt install <package-name>` Install package <br />
 `apt remove <package-name>` Uninstall package <br />
@@ -141,8 +155,3 @@ virsh shutdown --domain freebsd
 `apt-get update` Refresh list of available packages <br >
 `apt full-upgrade` Upgrade installed pacakges <br />
 `apt-key list` List gpg keys <br />
-
-## Tmux
-`tmux ls` List sessions <br />
-`tmux kill-session -t <session-name>` Kill session <br />
-`Ctrl+b d` Detach from session <br />
